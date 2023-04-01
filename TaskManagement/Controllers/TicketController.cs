@@ -34,8 +34,9 @@ namespace TaskManagement.Controllers
                          Name = ticket.Name,
                          States = ticket.States,
                          TicketImages = listTicketImage?? new List<TicketImage>()
-                     };
-            return rs;
+                     }
+                     ;
+            return rs.OrderByDescending(t=>t.IsFavorited).OrderByDescending(t=>t.Name);
 
         }
 

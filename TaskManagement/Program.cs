@@ -7,6 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddScoped<TicketService, TicketService>();
+builder.Services.AddScoped<TicketImageService, TicketImageService>();
 builder.Services.AddScoped<TicketRepository, TicketRepository>();
 builder.Services.AddScoped<TicketImageRepository, TicketImageRepository>();;
 

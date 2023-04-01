@@ -19,7 +19,7 @@ namespace UnitTest
             request.AddFile("File", "./image/micky.png");
             RestResponse response = await client.ExecuteAsync(request);
             var expectString = "https://vanvt.blob.core.windows.net/task-image/micky.png";
-            Assert.AreEqual(response.StatusCode, HttpStatusCode.OK);
+            Assert.IsTrue(response.Content.Contains(expectString));
         }
     }
 }
